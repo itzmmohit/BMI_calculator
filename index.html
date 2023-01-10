@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>App: BMI</title>
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style type="text/css">
+
+ * {
+ 	margin: 0;
+ }
+
+.food-category {
+  height: 100px; width: 140px; border-radius: 4px; border: 1px solid #8b8b8b; display: flex; justify-content: center; align-items: center;
+}
+
+.food-category:hover {
+  border: 2px solid grey;
+}
+
+.food-category-name {
+  color: #858585;
+}
+
+/* loading dots */
+
+
+  /* Desktop Responsive */
+     @media only screen and (min-width: 940px) {
+
+ input[type=text]:focus {
+   outline: none;
+ }  
+ input[type=number]:focus {
+   outline: none;
+ }  
+ button {
+  background-color: #526dff; border: none; color: #ffffff;
+ }
+
+ .email {
+  height: 40px; width: 320px; text-align: center; border: none; border-bottom: 2px solid grey; font-size: 22px;
+ }
+
+ #male {
+   height: 120px; width: 120px; border-radius: 50%; border: 4px solid grey;
+ }
+
+ #male:hover{
+  border: 4px solid green;
+ }
+
+ #female {
+  height: 120px; width: 120px; border-radius: 50%; border: 4px solid grey;
+ }
+
+ #female:hover{
+  border: 4px solid green;
+ }
+
+ .next-3 {
+  height: 40px; width: 240px; padding: 10px; border-radius: 20px; cursor: pointer; display: none;
+ }
+
+
+.height {
+  height: 40px; width: 320px; border: 1px solid #e1e1e1; border-radius: 4px; margin: 10px auto; font-size: 16px;
+}
+
+.weight {
+  height: 40px; width: 320px; border: 1px solid #e1e1e1; border-radius: 4px; margin: 10px auto; font-size: 16px;
+}
+
+.age {
+  height: 40px; width: 320px; border: 1px solid #e1e1e1; border-radius: 4px; margin: 10px auto; font-size: 16px;
+}
+
+
+
+
+ .outer-con-1 {
+  height: 100vh; width: 100%; background-color: #a6e35e; display: flex; align-items: center; justify-content: center;
+ }
+
+ .con-1 {
+  height: 60vh; width: 50%; background-color: #ffffff; border-radius: 10px; cursor: pointer; border: 1px solid #c9c9c9; display: none;
+ }
+
+ .con-2 {
+   height: 60vh; width: 50%; background-color: #ffffff; border-radius: 10px; cursor: pointer; border: 1px solid #c9c9c9; display: none; 
+ }
+
+ .con-3 {
+   height: 60vh; width: 50%; background-color: #ffffff; border-radius: 10px; cursor: pointer; border: 1px solid #c9c9c9; display: none;
+ }
+
+ .con-4 {
+   height: 60vh; width: 50%; background-color: #ffffff; border-radius: 10px; cursor: pointer; border: 1px solid #c9c9c9; display: none;
+ }
+
+ .con-5 {
+   height: 60vh; width: 50%; background-color: #ffffff; border-radius: 10px; cursor: pointer; border: 1px solid #c9c9c9; display: none;
+ }
+
+ .con-5-1-2 {
+  height: 240px; width: 70%; margin: auto; background-color: ;
+ }
+
+ .con-6 {
+   height: 60vh; width: 60%; background-color: #ffffff; border-radius: 10px; cursor: pointer; border: 1px solid #c9c9c9; display: none;
+ }
+
+ .outer-con-2 {
+  height: 100vh; width: 100%; background-color: #ffffff; border: 1px solid #c9c9c9; display: none;
+ }
+
+
+ .loading {
+  color: grey;
+  display: none;
+}
+
+.loading:after {
+  font-size: 24px;
+  content: ' .';
+  animation: dots 1s steps(5, end) infinite;}
+
+@keyframes dots {
+  0%, 20% {
+    color: rgba(0,0,0,0);
+    text-shadow:
+      .25em 0 0 rgba(0,0,0,0),
+      .5em 0 0 rgba(0,0,0,0);}
+  40% {
+    color: black;
+    text-shadow:
+      .25em 0 0 rgba(0,0,0,0),
+      .5em 0 0 rgba(0,0,0,0);}
+  60% {
+    text-shadow:
+      .25em 0 0 black,
+      .5em 0 0 rgba(0,0,0,0);}
+  80%, 100% {
+    text-shadow:
+      .25em 0 0 black,
+      .5em 0 0 black;}}
+
+
+
+}
+
+
+
+
+
+     
+/* Mobile Responsive */
+@media only screen and (max-width: 940px) {
+
+
+ input[type=text]:focus {
+   outline: none;
+ }  
+
+ button {
+  background-color: #526dff; border: none; color: #ffffff;
+ }
+
+ .email {
+  height: 40px; width: 280px; text-align: center; border-radius: 20px; border: none; border: 1px solid #e1e1e1; font-size: 18px; color: #8b8b8b;
+ }
+
+ #male {
+   height: 120px; width: 120px; border-radius: 50%; border: 4px solid grey;
+ }
+
+ #male:hover{
+  border: 4px solid green;
+ }
+
+ #female {
+  height: 120px; width: 120px; border-radius: 50%; border: 4px solid grey;
+ }
+
+ #female:hover{
+  border: 4px solid green;
+ }
+
+ .next-3 {
+  height: 40px; width: 240px; padding: 10px; margin-top: 50px; border-radius: 20px; cursor: pointer; display: none;
+ }
+
+
+.height {
+  height: 40px; width: 280px; border: 1px solid #e1e1e1; border-radius: 2px; margin: 10px auto; font-size: 16px;
+}
+
+.weight {
+  height: 40px; width: 280px; border: 1px solid #e1e1e1; border-radius: 2px; margin: 10px auto; font-size: 16px;
+}
+
+.age {
+  height: 40px; width: 280px; border: 1px solid #e1e1e1; border-radius: 2px; margin: 10px auto; font-size: 16px;
+}
+
+
+
+ .outer-con-1 {
+  height: 100vh; width: 100%; background-color: #a6e35e; display: flex; align-items: center; justify-content: center;
+ }
+
+ .con-1 {
+  height: 60vh; width: 90%; background-color: #ffffff; border-radius: 10px; cursor: pointer; border: 1px solid #c9c9c9; display: none;
+ }
+
+ .con-2 {
+   height: 60vh; width: 90%; background-color: #ffffff; border-radius: 10px; cursor: pointer; border: 1px solid #c9c9c9; display: none; 
+ }
+
+ .con-3 {
+   height: 60vh; width: 90%; background-color: #ffffff; border-radius: 10px; cursor: pointer; border: 1px solid #c9c9c9; display: none;
+ }
+
+ .con-4 {
+   height: 60vh; width: 90%; background-color: #ffffff; border-radius: 10px; cursor: pointer; border: 1px solid #c9c9c9; display: none;
+ }
+
+ .con-5 {
+   height: 60vh; width: 90%; background-color: #ffffff; border-radius: 10px; cursor: pointer; border: 1px solid #c9c9c9; display: none;
+ }
+
+ .con-5-1-2 {
+  height: 240px; width: 90%; margin: auto; background-color: ;
+ }
+
+ .con-6 {
+   height: 60vh; width: 90%; background-color: #ffffff; border-radius: 10px; cursor: pointer; border: 1px solid #c9c9c9; display: none;
+ }
+
+ .outer-con-2 {
+  height: 100vh; width: 100%; background-color: #ffffff; border: 1px solid #c9c9c9; display: none;
+ }
+
+ .loading {
+  color: #ffffff;
+  display: none;
+}
+
+.loading:after {
+  font-size: 24px;
+  content: ' .';
+  animation: dots 1s steps(5, end) infinite;}
+
+@keyframes dots {
+  0%, 20% {
+    color: rgba(0,0,0,0);
+    text-shadow:
+      .25em 0 0 rgba(0,0,0,0),
+      .5em 0 0 rgba(0,0,0,0);}
+  40% {
+    color: white;
+    text-shadow:
+      .25em 0 0 rgba(0,0,0,0),
+      .5em 0 0 rgba(0,0,0,0);}
+  60% {
+    text-shadow:
+      .25em 0 0 white,
+      .5em 0 0 rgba(0,0,0,0);}
+  80%, 100% {
+    text-shadow:
+      .25em 0 0 white,
+      .5em 0 0 white;}}
+
+
+
+}  
+
+
+</style>
+<body>
+<input id="hiddenEmail" type="hidden" name="" value="">
+<div id="outer-con-1" class="outer-con-1" style="">
+	<!-------------1------------>
+	<div id="con-1" class="con-1" style="">
+
+	</div>
+	<!--------------2------------>
+	<div id="con-2" class="con-2" style="">
+		<div style="height: 100%; width: 100%; display: block; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+		  <div style="height: 120px; width: 100%; background-color: ; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+			<span id="con-2-data"></span>
+		  </div>
+		  <div style="height: 240px; width: 100%; background-color: ; display: flex; justify-content: center; align-items: center;">
+		   <input id="email" class="email" type="text" name="email" placeholder="Your Email..." style="">
+		  </div>
+		  <div style="height: 120px; width: 100%; background-color: ; display: flex; justify-content: center; align-items: center;">
+               <button id="next-2" class="next-1" style="height: 40px; width: 240px; padding: 10px; border-radius: 20px; cursor: pointer;">Next</button>
+		  </div>
+	    </div>
+	</div>
+	<!--------------3------------>
+	<div id="con-3" class="con-3" style="">
+		<div style="height: 100%; width: 100%; display: block; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+		  <div style="height: 60px; width: 100%; background-color: ; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+			<span id="con-3-data"></span>
+		  </div>
+		  <div style="height: 240px; width: 60%; margin: auto; background-color: ; display: flex; justify-content: center; align-items: center;">
+		      <div style="height: 240px; width: 50%; float: left; background-color: ; display: flex; justify-content: center; align-items: center;">
+		      	  <img id="male" class="gender" gender-extract="male" src="avatar-1.png" style="">
+		      </div>
+		      <div style="height: 240px; width: 50%; float: right; background-color: ; display: flex; justify-content: center; align-items: center;">
+		      	  <img id="female" class="gender" gender-extract="female" src="avatar-2.png" style="">
+		      </div>
+		  </div>
+		  <div style="height: 200px; width: 100%; background-color: ; display: flex; justify-content: center; align-items: center;">
+               <button id="next-3" class="next-3" style="">Next</button>
+		  </div>
+	    </div>
+	</div>
+	<!--------------4------------>
+	<div id="con-4" class="con-4" style="">
+		<div style="height: 100%; width: 100%; display: block; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+		  <div style="height: 120px; width: 100%; background-color: ; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+			<span id="con-4-data"></span>
+		  </div>
+		  <div style="height: 240px; width: 100%; background-color: ; text-align: center;">
+              <input id="height" class="height" style="" type="number" name="" placeholder="Height (5.8)">
+              <br>
+              <input id="weight" class="weight" style="" type="number" name="" placeholder="Weight (65)">
+              <br>
+              <input id="age" class="age" style="" type="number" name="" placeholder="Age (20)">
+		  </div>
+		  <div style="height: 120px; width: 100%; background-color: ; display: flex; justify-content: center; align-items: center;">
+               <button id="next-4" class="next-4" style="height: 40px; width: 240px; padding: 10px; border-radius: 20px; cursor: pointer;">Next</button>
+		  </div>
+	    </div>
+	</div>
+	<!--------------5------------>
+	<div id="con-5" class="con-5" style="">
+		<div class="con-5-1" style="height: 100%; width: 100%; display: block; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+		  <div class="con-5-1-1" style="height: 120px; width: 100%; background-color: ; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+		  </div>
+		  <div class="con-5-1-2" style="">
+               <div style="height: 240px; width: 50%; float: left; background-color: ;">
+               	  <div style="height: 120px; width: 100%; background-color: ; display: flex; justify-content: center; align-items: center;">
+               	  	 <div class="food-category" id="vegetarian" extract-food-category="vegetarian" style="">
+               	  		    <p class="food-category-name">Vegetarian</p>
+               	  	 </div>
+               	  </div>
+               	  <div style="height: 120px; width: 100%; background-color: ; display: flex; justify-content: center; align-items: center;">
+               	  	 <div class="food-category" id="non-vegetarian" extract-food-category="non-vegetarian" style="">
+               	  		  <p class="food-category-name">Non Vegetarian</p>
+               	  	 </div>
+               	  </div>
+               </div>
+               <div style="height: 240px; width: 50%; float: right; background-color: ;">
+               	  <div style="height: 120px; width: 100%; background-color: ; display: flex; justify-content: center; align-items: center;">
+               	      <div class="food-category" id="eggetarian" extract-food-category="eggetarian" style="">
+               	  		     <p class="food-category-name">Eggetarian</p>
+               	  	  </div>	
+               	  </div>
+               	  <div style="height: 120px; width: 100%; background-color: ; display: flex; justify-content: center; align-items: center;">
+               	  	  <div class="food-category" id="vegan" extract-food-category="vegan" style="">
+               	  		     <p class="food-category-name">Vegan</p>
+               	  	  </div>	
+               	  </div>
+               </div>
+		  </div>
+		  <div style="height: 120px; width: 100%; background-color: ; display: flex; justify-content: center; align-items: center;">
+               <button id="next-5" class="next-5" style="height: 40px; width: 240px; padding: 10px; border-radius: 20px; cursor: pointer;">Done</button>
+		  </div>
+	    </div>
+	</div>
+
+	<!--------------6------------>
+	<div id="con-6" class="con-6" style="">
+		<div style="height: 100%; width: 100%; display: block; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+		  <div style="height: 120px; width: 100%; background-color: ; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+		  </div>
+		  <div style="height: 240px; width: 100%; background-color: ; display: flex; justify-content: center; align-items: center;">
+         <span id="finalResult"></span>
+		  </div>
+		  <div style="height: 120px; width: 100%; background-color: ; display: flex; justify-content: center; align-items: center;">
+        <p class="loading">Wait :) We are finding a perfect meal for you</p>
+		  </div>
+	    </div>
+	</div>
+
+</div>
+
+
+<div id="outer-con-2" class="outer-con-2" style="">
+
+  <div class="" style="height: 120px; width: 100%; background-color: #f2f2f2;">
+    <div style="height: 100px; width: 30%; float: left; margin: 15px; background-color: ; display: flex; align-items: center; justify-content: center;">
+       <h2 style="color: grey;">Breakfast</h2>
+    </div>
+    <div style="height: 100px; width: 30%; float: left; margin: 15px; background-color: ; display: flex; align-items: center; justify-content: center;">
+       <h2 style="color: grey;">Lunch</h2>
+    </div>
+    <div style="height: 100px; width: 30%; float: left; margin: 15px; background-color: ; display: flex; align-items: center; justify-content: center;">
+       <h2 style="color: grey;">Dinner</h2>
+    </div>      
+  </div>
+
+
+
+	<div class="egg-con" style="height: 320px; width: 100%; background-color: ; display: none;">
+    <div style="height: 300px; width: 30%; float: left; margin: 15px; background-color: ; display: flex; align-items: center; justify-content: center;">
+         <img style="height: 140px; cursor: pointer;" src="food/egg/image1.png">
+    </div>
+    <div style="height: 300px; width: 30%; float: left; margin: 15px; background-color: ; display: flex; align-items: center; justify-content: center;">
+          <img style="height: 140px; cursor: pointer;" src="food/egg/image2.png">
+    </div>
+    <div style="height: 300px; width: 30%; float: left; margin: 15px; background-color: ; display: flex; align-items: center; justify-content: center;">
+          <img style="height: 140px; cursor: pointer;" src="food/egg/image3.png">
+    </div>      
+  </div>
+
+  <div class="non-veg-con" style="height: 320px; width: 100%; background-color: ; display: none;">
+    <div style="height: 300px; width: 30%; float: left; margin: 15px; background-color: ; display: flex; align-items: center; justify-content: center;">
+         <img style="height: 140px; cursor: pointer;" src="food/non-veg/image1.png">
+    </div>
+    <div style="height: 300px; width: 30%; float: left; margin: 15px; background-color: ; display: flex; align-items: center; justify-content: center;">
+          <img style="height: 140px; cursor: pointer;" src="food/non-veg/image2.png">
+    </div>
+    <div style="height: 300px; width: 30%; float: left; margin: 15px; background-color: ; display: flex; align-items: center; justify-content: center;">
+          <img style="height: 140px; cursor: pointer;" src="food/non-veg/image3.png">
+    </div>      
+  </div>
+
+  <div class="veg-con" style="height: 320px; width: 100%; background-color: ; display: none;">
+    <div style="height: 300px; width: 30%; float: left; margin: 15px; background-color: ; display: flex; align-items: center; justify-content: center;">
+         <img style="height: 140px; cursor: pointer;" src="food/veg/image1.png">
+    </div>
+    <div style="height: 300px; width: 30%; float: left; margin: 15px; background-color: ; display: flex; align-items: center; justify-content: center;">
+          <img style="height: 140px; cursor: pointer;" src="food/veg/image2.png">
+    </div>
+    <div style="height: 300px; width: 30%; float: left; margin: 15px; background-color: ; display: flex; align-items: center; justify-content: center;">
+          <img style="height: 140px; cursor: pointer;" src="food/veg/image3.png">
+    </div>      
+  </div>
+
+  <div class="vegan-con" style="height: 320px; width: 100%; background-color: ; display: none;">
+    <div style="height: 300px; width: 30%; float: left; margin: 15px; background-color: ; display: flex; align-items: center; justify-content: center;">
+         <img style="height: 140px; cursor: pointer;" src="food/vegan/image1.png">
+    </div>
+    <div style="height: 300px; width: 30%; float: left; margin: 15px; background-color: ; display: flex; align-items: center; justify-content: center;">
+          <img style="height: 140px; cursor: pointer;" src="food/vegan/image2.png">
+    </div>
+    <div style="height: 300px; width: 30%; float: left; margin: 15px; background-color: ; display: flex; align-items: center; justify-content: center;">
+          <img style="height: 140px; cursor: pointer;" src="food/vegan/image3.png">
+    </div>      
+   </div>
+
+</div>
+
+
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+  //----------------1/2---------------//	
+  setTimeout(function() {
+   $("#con-1").show('1000'); 
+  }, 1000);
+
+  setTimeout(function() {
+   $("#con-2").show();
+   $("#con-1").hide();
+   $('#email').focus() 
+ }, 8000);
+</script>
+
+
+<script type="text/javascript">
+  //----------------2/3---------------//	
+  $("#next-2").click(function(e) {
+        e.preventDefault();
+        var email = $("#email").val();
+
+        if(email != '') {
+          var value = $("#email").val();
+          $("#hiddenEmail").val(value);
+        var dataString1 = 'email='+email;
+
+                    $.ajax({
+                    type: 'POST',
+                    data: dataString1,
+                    url: 'admin/serv-email.php',
+                    success:function(data) {
+                    $("#con-2-data").html(data);
+                    $("#con-2").hide(); // Hide too
+                    $("#con-3").show('1000'); // Show too
+                      setTimeout(function() {
+    
+                      }, 2000);
+                    }
+                   });
+
+       }else{
+       	  setTimeout(function() {
+                  $('#email').css('border-bottom', '2px solid red');
+          }, 2000);
+       }            
+
+});
+
+// let email = $("#email").val();
+
+</script>
+<script>
+var input = document.getElementById("email");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("next-2").click();
+  }
+});
+</script>
+
+
+
+<script type="text/javascript">
+  //----------------3/4---------------//	
+ 
+
+// Gender Selection
+  var genSelect = [...document.querySelectorAll(".gender")];
+  genSelect.forEach(function(btn){
+  btn.onclick = function() {
+    var gender = btn.getAttribute('gender-extract');
+    var email = $("#hiddenEmail").val();
+    var dataString2 = 'gender='+gender+'&email='+email;
+    console.log(dataString2);
+    (function genderSelection() {
+
+                    $.ajax({
+                    type: 'POST',
+                    data: dataString2,
+                    url: 'admin/serv-gender.php',
+                    success:function(data) {
+                    $("#con-3-data").html(data);
+                    $('#'+gender).css('border', '4px solid green');
+                      setTimeout(function() {
+                         $("#next-3").show('slow');
+                      }, 1000);
+                    }
+                   });
+
+   })();
+
+  }
+});
+
+$("#next-3").click(function(e) {
+        e.preventDefault();
+        $("#con-3").hide(); // Hide too
+        $("#con-4").show('1000'); // Show too
+
+});  
+  
+</script>
+
+
+<script type="text/javascript">
+  //----------------4/5---------------//	
+  $("#next-4").click(function(e) {
+
+        e.preventDefault();
+        var height = $("#height").val();
+        var weight = $("#weight").val();
+        var age = $("#age").val();
+        var email = $("#hiddenEmail").val();
+
+        if(height != '') {
+
+          var dataString3 = 'height='+height+'&weight='+weight+'&age='+age+'&email='+email;
+          console.log(dataString3);
+                    $.ajax({
+                    type: 'POST',
+                    data: dataString3,
+                    url: 'admin/serv-info.php',
+                    success:function(data) {
+                    $("#con-4-data").html(data);
+                    $("#con-4").hide(); // Hide too
+                    $("#con-5").show('1000'); // Show too
+                      setTimeout(function() {
+    
+                      }, 2000);
+                    }
+                   });
+
+       }else{
+       	  setTimeout(function() {
+                  $('#height').css('border-bottom', '2px solid red');
+          }, 2000);
+       }
+
+});
+
+   
+</script>
+
+<script type="text/javascript">
+  //----------------5---------------//	
+
+
+// Food Category Selection
+  var foodCatSelect = [...document.querySelectorAll(".food-category")];
+  foodCatSelect.forEach(function(btn){
+  btn.onclick = function() {
+    var foodCategory = btn.getAttribute('extract-food-category');
+    var email = $("#hiddenEmail").val();
+    var dataString4 = 'foodCategory='+foodCategory+'&email='+email;
+    console.log(dataString4);
+    (function foodCategorySelection() {
+
+                    $.ajax({
+                    type: 'POST',
+                    data: dataString4,
+                    url: 'admin/serv-food-category.php',
+                    success:function(data) {
+                    $('#'+foodCategory).css('border', '4px solid green');
+                      setTimeout(function() {
+
+                      }, 5000);
+                    }
+                   });
+
+   })();
+
+  }
+});
+
+$("#next-5").click(function(e) {
+
+    var email = $("#hiddenEmail").val();
+    var dataString5 = 'email='+email;
+
+        $.ajax({
+          type: 'POST',
+          data: dataString5,
+          url: 'result/fetch-result.php',
+              success:function(data) {
+                $("#finalResult").html(data);
+                setTimeout(function() {
+                  $(".loading").show(); // Show too
+                }, 3000);
+               }
+              });
+
+        e.preventDefault();
+        $("#con-5").hide(); // Hide too
+        $("#con-6").show('slow'); // Show too
+           setTimeout(function() {
+            $("#outer-con-2").show(); // Show too
+            $(".loading").hide();
+            $("html, body").animate({ scrollTop: "+=740px" }, 800);
+            }, 10000);
+}); 
+
+</script>
+
